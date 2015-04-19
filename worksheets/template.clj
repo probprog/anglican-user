@@ -5,11 +5,9 @@
 ;; **
 
 ;; @@
-(ns template
-  (:refer-clojure :exclude [rand rand-nth])
-  (:require [gorilla-plot.core :as plot])
-  (:use [anglican core emit runtime
-         [state :refer [get-predicts get-log-weight]]]))
+(use 'nstools.ns)
+(ns+ template
+  (:like anglican-user.worksheet))
 ;; @@
 ;; =>
 ;;; {"type":"html","content":"<span class='clj-nil'>nil</span>","value":"nil"}

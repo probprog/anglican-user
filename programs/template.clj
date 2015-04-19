@@ -1,5 +1,6 @@
-(ns template
-  (:use [anglican emit runtime]))
+(use 'nstools.ns)
+(ns+ template
+  (:like anglican-user.program))
 
 (defquery template
   "query template"

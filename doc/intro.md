@@ -16,7 +16,7 @@ from the command line, or:
     (m! namespace [program] [option ...])
 
 in the REPL, where 'namespace' is the namespace containing the
-embedded Anglican program to run, for example:
+Anglican program to run, for example:
 
     bash$ lein run branching -a pgibbs -n 100 \
                -o ":number-of-particles 50"

@@ -117,5 +117,5 @@ each sample:
     (println "mean(r) =" r-mean)
 
 Gorilla REPL provides a convenient environment for processing
-and visualization of inference results. `worksheets/template.clj`
+and visualization of inference results. 'worksheets/template.clj'
 is supplied as a starting point for an Anglican worksheet.

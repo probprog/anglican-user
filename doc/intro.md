@@ -91,12 +91,13 @@ syntax:
 
     (doquery algorithm query-name value & options)
 
-where `algorithm` is the keyword specifying the algorithm
-(`:lmh`, `:pgibbs`, `:pcascade` etc.) and options are Clojure
-clojure keyword arguments, specific to each inference algorithm.
-`doquery` returns a lazy sequence of samples — objects
-encapsulating a map of predicts and the log probability 
-of each sample:
+where `algorithm` is the keyword specifying the algorithm (`:lmh`,
+`:pgibbs`, `:pcascade` etc.), `value` is the initial value passed to
+the query (`nil` if the query does not expect arguments), and
+`options` are Clojure clojure keyword arguments, specific to each
+inference algorithm.  `doquery` returns a lazy sequence of samples —
+objects encapsulating a map of predicts and the log probability of
+each sample:
 
     (ns analyze-branching
       (:use [anglican

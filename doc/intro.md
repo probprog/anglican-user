@@ -42,7 +42,7 @@ logi for anglican.logi).
     -w, --warmup FLAG                true       Pre-evaluate the program
     -h, --help                                  Print usage summary and exit
 
-## Redirecting Input and Output
+### Redirecting Input and Output
 
 Inference output is normally redirected to a file for post-processing. On the
 command line, '>' can be used:

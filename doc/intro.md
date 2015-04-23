@@ -89,7 +89,7 @@ An Anglican query can also be invoked programmatically from
 Clojure code, using the `doquery` macro, with the following
 syntax:
 
-    (doquery algorithm query-name & options)
+    (doquery algorithm query-name value & options)
 
 where `algorithm` is the keyword specifying the algorithm
 (`:lmh`, `:pgibbs`, `:pcascade` etc.) and options are Clojure
@@ -99,13 +99,13 @@ encapsulating a map of predicts and the log probability
 of each sample:
 
     (ns analyze-branching
-      (:use [embang
+      (:use [anglican
              core 
-             [state :only [get-predicts get-log-weight]])
+             [state :only [get-predicts get-log-weight]]])
       (:use branching))
 
     ;; Lazily invoke the inference.
-    (def samples (doquery :pgibbs branching :number-of-particles 100)) 
+    (def samples (doquery :pgibbs branching nil :number-of-particles 100)) 
 
 	;; Retrieve predicts from samples.
     (def rs (map #(get % 'r) (map get-predicts samples)))

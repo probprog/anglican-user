@@ -61,7 +61,7 @@ and the output is appended to the file. In the REPL, the above
 command example can be run as
 
     anglican.core=> (redir [:out "branching.pgibbs"]
-	                  (m! branching -a pgibbs -n 100
+                      (m! branching -a pgibbs -n 100
                           -o ":number-of-particles 50"))
 
 Functions `freqs` (frequency table for every integer-valued or
@@ -84,3 +84,37 @@ results:
      r, 12, 0.00100000, -6.90776
 
 ## Calling Anglican from Clojure
+
+An Anglican query can also be invoked programmatically from
+Clojure code, using the `doquery` macro, with the following
+syntax:
+
+    (doquery algorithm query-name & options)
+
+where `algorithm` is the keyword specifying the algorithm
+(`:lmh`, `:pgibbs`, `:pcascade` etc.) and options are Clojure
+clojure keyword arguments, specific to each inference algorithm.
+`doquery` returns a lazy sequence of samples &#x2014; objects
+encapsulating a map of predicts and the log probability 
+of each sample:
+
+    (ns analyze-branching
+      (:use [embang
+             core 
+             [state :only [get-predicts get-log-weight]])
+      (:use branching))
+
+    ;; Lazily invoke the inference.
+    (def samples (doquery :pgibbs branching :number-of-particles 100)) 
+
+	;; Retrieve predicts from samples.
+    (def rs (map #(get % 'r) (map get-predicts samples)))
+
+	;; Use 1000 samples to estimate the mean of r.
+    (def r-mean (let [N 1000]
+                  (*  (/ N) (reduce + (take N rs)))))
+    (println "mean(r) =" r-mean)
+
+Gorilla REPL provides a convenient environment for processing
+and visualization of inference results. `worksheets/template.clj`
+is supplied as a starting point for an Anglican worksheet.

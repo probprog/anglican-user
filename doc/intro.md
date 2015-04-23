@@ -94,7 +94,7 @@ syntax:
 where `algorithm` is the keyword specifying the algorithm
 (`:lmh`, `:pgibbs`, `:pcascade` etc.) and options are Clojure
 clojure keyword arguments, specific to each inference algorithm.
-`doquery` returns a lazy sequence of samples – objects
+`doquery` returns a lazy sequence of samples — objects
 encapsulating a map of predicts and the log probability 
 of each sample:
 

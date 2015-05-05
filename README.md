@@ -7,7 +7,8 @@ a [Leiningen](http://leiningen.org/) project. Probabilistic queries
 can be run either in the Leiningen REPL, or inside the browser using
 [Gorilla REPL](http://gorilla-repl.org/).
 
-Checkout and modify for your needs. `programs` is intended for
+[Checkout and modify for your needs](https://bitbucket.org/dtolpin/src/HEAD/doc/intro.md).
+ `programs` is intended for
 standalone programs run in REPL or from the command line,
 `worksheets` is for Gorilla REPL worksheets. Take a look a the
 [Introduction to

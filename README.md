@@ -23,4 +23,4 @@ The easiest way to start a new program is to copy
 `worksheets/template.clj` (for Gorilla worksheets) to a file with a
 different name in the same directory and start modifying it.
 Advanced programming patterns and techniques can be found in the
-collection of [anglican examples](https://bitbucket.org/fwood/anglican-examples).
+collection of [anglican examples](https://bitbucket.org/probprog/anglican-examples).

@@ -5,7 +5,7 @@
             :url "http://www.eclipse.org/legal/epl-v10.html"}
   :dependencies [[org.clojure/clojure "1.8.0"]
                  [nstools "0.2.4"]
-                 [anglican "0.8.0"]]
+                 [anglican "0.9.0"]]
   :plugins [[dtolpin/lein-gorilla "0.3.7-SNAPSHOT"]]
   :resource-paths ["programs"]
   :main ^:skip-aot template)

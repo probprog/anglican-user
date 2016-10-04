@@ -8,4 +8,4 @@
                  [anglican "1.0.0"]]
   :plugins [[dtolpin/lein-gorilla "0.3.7-SNAPSHOT"]]
   :resource-paths ["programs"]
-  :main ^:skip-aot template)
+  :main ^:skip-aot anglican.core)
